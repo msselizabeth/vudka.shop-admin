@@ -1,0 +1,18 @@
+.appContainer{
+    display: flex;
+    margin: 0 auto;
+}
+
+.pagesContainer{
+    padding: 15px;
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    overflow-y: auto;
+    
+}
+/* .contentContainer{
+    border: 0.7px solid black;
+    width: 100%;
+    height: 100%;
+} */

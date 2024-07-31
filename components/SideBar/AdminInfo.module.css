@@ -1,0 +1,94 @@
+.adminInfoContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.currentAdmin{
+    display: flex;
+    gap: 3px;
+    font-size: 12px;
+}
+
+.logoutBtnContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--side-bar-color);
+    border: 0.7px solid var(--side-bar-color);
+    border-radius: 35px;
+    padding: 10px;
+    width: 35px;
+    height: 35px;
+    transition: var(--transition);
+
+}
+.logoutBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    color: var(--side-bar-color);
+    transition: var(--transition);
+}
+
+.logoutBtnContainer:hover {
+    color: var(--active-color);
+    border: 1px solid var(--active-color);
+  }
+  
+  .logoutBtnContainer:hover .logoutBtn {
+    color: var(--active-color);
+  }
+
+@media screen and (min-width:768px) {
+    .adminInfoContainer{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+    .currentAdmin{
+        gap: 7px;
+        font-size: 16px;
+    }
+    
+    .logoutBtnContainer{
+        border-radius: 35px;
+        padding: 12px;
+        width: 40px;
+        height: 40px;
+    
+    }
+
+}
+
+@media screen and (min-width:1024px) {
+    .adminInfoContainer{
+        gap: 20px;
+    }
+    .currentAdmin{
+        gap: 10px;
+        font-size: 18px;
+    }
+    .logoutBtn{
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .adminInfoContainer{
+        gap: 25px;
+    }
+    .currentAdmin{
+        font-size: 26px;
+    }
+    .logoutBtnContainer{
+        width: 50px;
+        height: 50px;
+    }
+    .logoutBtn{
+        font-size: 1.5rem;
+    }
+}
