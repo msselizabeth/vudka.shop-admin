@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    background-color: var(--side-bar-bg-color);
+    background: var(--side-bar-bg-color);
     color: var(--side-bar-color);
     width: calc(100% - 76%);
     height: 100vh;

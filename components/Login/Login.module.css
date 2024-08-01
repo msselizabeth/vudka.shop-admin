@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: var(--side-bar-bg-color); 
+    background: var(--side-bar-bg-color); 
     width: 100%;
     height: 30vh;
     color: var(--secondary-text-color);
@@ -55,6 +55,7 @@
     border: 1px solid #ccc;
     border-radius: 10px;
     font-size: 1rem;
+    transition: var(--transition);
   }
   
   .loginForm button {
@@ -62,15 +63,16 @@
     padding: 0.75rem;
     margin: 0 auto;
     border-radius: 10px;
-    background-color: var(--side-bar-bg-color); /* Цвет кнопки */
+    background: var(--side-bar-bg-color); /* Цвет кнопки */
     color: var(--secondary-text-color);
     font-size: 1rem;
     cursor: pointer;
+    transition: var(--transition);
     
   }
   
   .loginForm button:hover {
-    background-color: var(--active-color); 
+    background: var(--active-color); 
     color: var(--primary-text-color);/* Цвет кнопки при наведении */
   }
   .loginForm input:hover{
@@ -98,8 +100,6 @@
       
       .logoText {
         font-size: 1.8rem;
-        font-family: var(--font-rubik);
-        color: var(--secondary-text-color);
       }
       
       .loginInnerContainer {

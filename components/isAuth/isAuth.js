@@ -4,6 +4,7 @@ import { checkAuth } from "@/middlewares/auth";
 import { useEffect, useState } from "react";
 import AppLayout from "../AppLayout/AppLayout";
 import Login from "../Login/Login";
+import Loading from "../Loading/Loading";
 
 const IsAuth = ({ children }) => {
     const [isAuthenticated, setIsAuthenticated] = useState(null);
@@ -18,11 +19,11 @@ const IsAuth = ({ children }) => {
   
     if (isAuthenticated === null) {
 
-      return <div>Loading...</div>; // или загрузочный спиннер
+      return <Loading size={150} color={"#F6F3BD"} />; // или загрузочный спиннер
     }
   
     return (
-        <>{isAuthenticated ? <AppLayout>{children}</AppLayout> : <Login/> }</>
+      <>{isAuthenticated ? <AppLayout>{children}</AppLayout> : <Login  /> }</>
     );
 }
 
