@@ -17,7 +17,12 @@ const Login = () => {
       await login(username, password);
       window.location.reload();
     } catch (error) {
-      setError("Невірний пароль або імʼя.");
+      if (error.status === 401) {
+        setError("Невірний пароль або імʼя.");
+      } else {
+        setError("Невідома помилка. Повторіть спробу.");
+      }
+      
     }
   };
 
@@ -39,8 +44,8 @@ const Login = () => {
       <div className={styles.loginInnerContainer}>
         <h3 className={styles.loginTitle}>Авторизація</h3>
         <form onSubmit={handleSubmit} className={styles.loginForm}>
-          <input type="text" name="username" placeholder="Імʼя" />
-          <input type="password" name="password" placeholder="Пароль" />
+          <input type="text" name="username" placeholder="Імʼя" required/>
+          <input type="password" name="password" placeholder="Пароль" required minLength={6}/>
           {error && <p className={styles.error}>{error}</p>}
           <button type="submit">Увійти</button>
         </form>

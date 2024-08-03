@@ -10,8 +10,8 @@ export const login = async (name, password) => {
       localStorage.setItem('token', response.data.token);
       return response.data;
     } catch (error) {
-      console.error('Login error:', error);
-      throw error;
+      console.error('Login error:', error.response.data.message);
+      throw error.response;
     }
 };
   
