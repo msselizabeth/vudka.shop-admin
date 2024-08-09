@@ -43,7 +43,7 @@ const MainNav = () => {
           <Link
             href="/products"
             className={`${styles.mainNavLink} ${
-              pathname === "/products" ? styles.active : ""
+              pathname.includes("products") ? styles.active : ""
             }`}
           >
             {isMobile ? (
@@ -59,7 +59,7 @@ const MainNav = () => {
           <Link
             href="/sales"
             className={`${styles.mainNavLink} ${
-              pathname === "/sales" ? styles.active : ""
+              pathname.includes("sales") ? styles.active : ""
             }`}
           >
            {isMobile ? <FontAwesomeIcon icon={faChartLine} /> : <> <FontAwesomeIcon icon={faChartLine} /> Продажі </>}
@@ -69,7 +69,7 @@ const MainNav = () => {
           <Link
             href="/prices"
             className={`${styles.mainNavLink} ${
-              pathname === "/prices" ? styles.active : ""
+              pathname.includes("prices") ? styles.active : ""
             }`}
           >
              {isMobile ? <FontAwesomeIcon icon={faDollarSign} /> : <> <FontAwesomeIcon icon={faDollarSign} /> Ціни </>}

@@ -1,0 +1,19 @@
+.goodsContainer {
+    margin-top: 15px;
+}
+.goodsListContainer{
+    margin-top: 15px;
+}
+
+.goodsList{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+.paginationContainer{
+    display: flex;
+    gap: 10px;
+    width: 300px;
+    margin: 10px auto;
+}

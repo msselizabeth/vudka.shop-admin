@@ -1,0 +1,18 @@
+.paginationContainer{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 300px;
+    margin: 25px auto 0px auto;
+    font-size: 18px;
+    color: var(--bold-text-color);
+}
+
+.btn {
+    color: var(--pagination-btns-color);
+    font-size: 25px;
+}
+
+.btn:disabled {
+    color: var(--pagination-btns-disabled-color);
+}

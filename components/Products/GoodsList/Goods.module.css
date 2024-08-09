@@ -1,0 +1,19 @@
+
+
+
+.goodsContainer {
+    margin-top: 15px;
+}
+.goodsListContainer{
+    margin-top: 15px;
+}
+
+.goodsList{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+.goodsQuantity{
+    color: var(--bold-text-color);
+}

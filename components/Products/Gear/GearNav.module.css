@@ -1,0 +1,32 @@
+.prodNavContainer{
+    display: inline-block;
+    padding: 15px;
+    background: var(--containers-bg);
+    color: var(--primary-text-color);
+    border-radius: 30px;
+    border: 1.5px solid var(--primary-text-color);
+}
+.prodNavList{
+   
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin-top: 15px;
+    width: 210px;
+}
+
+.prodNavLink{
+    display: block;
+    padding: 12px;
+    border: 0.7px solid var(--primary-text-color);
+    border-radius: 25px;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.active {
+    color: var(--active-color);
+    border: 1px solid var(--active-color);
+    font-weight: 600;
+}

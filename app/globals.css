@@ -1,15 +1,19 @@
 :root {
   --max-width: 1100px;
+  --general-text-color: #03464F;
   --primary-text-color: #136773;
   --secondary-text-color: #F6F3BD;
   --primary-bg-color: #F4F9FD;
   --side-bar-color: #F6F3BD;
   --side-bar-bg-color: linear-gradient(to bottom, rgba(10, 103, 115, 1), rgba(11, 128, 144, 0.8));
   --border-containers: #136773;
-  --containers-bg: #F6F3BD;
+  --containers-bg: rgba(246, 243, 189, 0.4);
   --box-shadow: 0px 0px 10px 2px rgba(11, 128, 144, 0.45);
-  --active-color: #F79400;
+  --active-color: #F79401;
+  --bold-text-color: #872A03;
   --transition: all 0.3s ease-out;
+  --pagination-btns-color: rgb(135,42,3);
+  --pagination-btns-disabled-color: rgba(135,42,3, 0.4);
 
 }
 
@@ -26,6 +30,7 @@ body {
   background-color: var(--primary-bg-color);
   background-image: url("/vudka-fon.webp");
   background-size: 550px 550px;
+  color: var(--general-text-color);
  
 }
 
@@ -45,3 +50,13 @@ a {
   margin: 0;
   border: 0;
  }
+
+ .pages-title{
+  font-size: 22px;
+ }
+ .search {
+  width: 100%;
+  border: 0.7px solid var(--primary-text-color);
+  border-radius: 25px;
+  padding: 10px;
+}

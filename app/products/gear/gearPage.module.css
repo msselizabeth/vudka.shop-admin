@@ -1,0 +1,17 @@
+.gearContainer{
+    display: flex;
+    gap: 20px;
+   
+}
+.gearChildrenContainer{
+    width: 100%;
+    padding: 15px;
+    /* background: var(--containers-bg);
+    border-radius: 30px; */
+    
+
+}
+
+.gearContentContainer{
+    font-weight: 600;
+}

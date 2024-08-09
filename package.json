@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "clean": "rimraf .next"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
@@ -22,5 +23,8 @@
     "react-dom": "^18",
     "react-spinners": "^0.14.1",
     "supports-color": "^9.4.0"
+  },
+  "devDependencies": {
+    "rimraf": "^6.0.1"
   }
 }
