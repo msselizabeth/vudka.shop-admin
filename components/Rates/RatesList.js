@@ -18,6 +18,7 @@ const RatesList = () => {
   const [error, setError] = useState(null);
   const [editTarget, setEditTarget] = useState(null);
   const [tempRate, setTempRate] = useState(0);
+  const token = localStorage.getItem("token");
 
   // Function to fetch the main rate from the server
   const fetchMainRate = async () => {
