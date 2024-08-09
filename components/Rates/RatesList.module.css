@@ -1,5 +1,66 @@
+
+.ratesContainer{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+   
+    margin-bottom: 15px;
+    margin-left: auto;
+}
+.ratesIcon{
+    color: var(--bold-text-color);
+    font-size: 28px;
+}
 .ratesList {
     display: flex;
     gap: 15px;
     align-items: center;
+    padding: 15px;
+    background: var(--containers-bg);
+    color: var(--general-text-color);
+    border-radius: 30px;
+    border: 0.7px solid var(--primary-text-color);
+}
+
+.rate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.rateValue{
+    color: var(--bold-text-color);
+}
+
+.editBtn{
+    color: var(--edit-icon-color);
+    font-size: 16px;
+}
+.rateInputContainer{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.rateInput {
+
+    border: 0.7px solid var(--primary-text-color);
+    border-radius: 25px;
+    padding: 5px;
+}
+.rateInput::placeholder{
+    padding-left: 7px;
+}
+
+.saveButton{
+     color: var(--save-icon-color);   
+    font-size: 23px;
+}
+
+.cancelButton{
+    color: var(--cancel-delete-icon-color);
+    font-size: 23px;
 }

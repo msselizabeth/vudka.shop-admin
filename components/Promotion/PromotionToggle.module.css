@@ -1,0 +1,62 @@
+.radioLabel{
+    display: flex;
+    gap: 5px;
+}
+
+.promotionControlContainer{
+    width: 50%;
+    padding: 15px;
+    background: var(--containers-bg);
+    color: var(--general-text-color);
+    border-radius: 30px;
+    border: 0.7px solid var(--primary-text-color);
+}
+.promoTitle{
+    font-weight: 500;
+    font-size: 18px;
+}
+.radioContainer{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 15px;
+}
+.selectorsContainer{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 15px;
+}
+.selectContainer{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.select{
+    border: 0.7px solid var(--primary-text-color);
+    border-radius: 25px;
+    padding: 7px;
+}
+.calendarContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+    padding: 0.75rem;
+    margin: 10px auto 0px auto;
+    border-radius: 10px;
+    background: var(--side-bar-bg-color); /* Цвет кнопки */
+   
+  
+    cursor: pointer;
+    transition: var(--transition);
+    
+  }
+
+  .buttonContainer button{
+    color: var(--secondary-text-color);
+    font-size: 16px;
+  }

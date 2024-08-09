@@ -14,7 +14,10 @@
   --transition: all 0.3s ease-out;
   --pagination-btns-color: rgb(135,42,3);
   --pagination-btns-disabled-color: rgba(135,42,3, 0.4);
-
+  
+  --edit-icon-color: #0a8dc4;
+  --save-icon-color: #12A406;
+  --cancel-delete-icon-color: #CD0505;
 }
 
 
@@ -59,4 +62,6 @@ a {
   border: 0.7px solid var(--primary-text-color);
   border-radius: 25px;
   padding: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }

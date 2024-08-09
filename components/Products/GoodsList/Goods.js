@@ -14,7 +14,7 @@ const Goods = ({ goodFields, apiEndpoint }) => {
   const [limit, setLimit] = useState(10);
   const [totalPages, setTotalPages] = useState(0);
   const [totalGoods, setTotalGoods] = useState(0);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const fetchGoods = async () => {
     setIsLoading(true);
@@ -74,30 +74,12 @@ const Goods = ({ goodFields, apiEndpoint }) => {
             <p className={styles.goodsQuantity}>
               Товари: {startItemIndex}-{endItemIndex} з {totalGoods} товарів
             </p>
-            {/* Rods Display */}
-
-            {/* <ul className={styles.goodsList}>
-              {goods.map((good) => (
-                <li key={good._id}>
-                  {goodFields.map((field) => (
-                    <p key={field}>
-                      {field.charAt(0).toUpperCase() + field.slice(1)}:{" "}
-                      {good[field]}
-                    </p>
-                  ))}
-                </li>
-              ))}
-            </ul> */}
-              
-              <GoodsList goods={goods} goodFields={goodFields} />
-
-            
+            <GoodsList goods={goods} goodFields={goodFields} />
             <Pagination
               onClick={handlePageChange}
               page={page}
               totalPages={totalPages}
             />
-       
           </div>
         )}
       </div>

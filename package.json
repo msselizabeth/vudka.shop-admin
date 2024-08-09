@@ -15,13 +15,15 @@
     "@fortawesome/free-regular-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
-    "axios": "^1.7.2",
+    "axios": "^1.7.3",
     "debug": "^4.3.6",
     "dotenv": "^16.4.5",
     "next": "14.2.5",
     "react": "^18",
+    "react-datepicker": "^7.3.0",
     "react-dom": "^18",
     "react-spinners": "^0.14.1",
+    "react-toastify": "^10.0.5",
     "supports-color": "^9.4.0"
   },
   "devDependencies": {

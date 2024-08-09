@@ -1,6 +1,7 @@
 import { Roboto, Rubik_Mono_One } from "next/font/google";
 import "./globals.css";
 import IsAuth from "@/components/isAuth/isAuth";
+import { ToastContainer } from "react-toastify";
 
 
 const roboto = Roboto({
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
     <html lang="uk">
       <body className={`${rubik.variable} ${roboto.variable}`}>
         <IsAuth>{children}</IsAuth>
+        <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} />
       </body>
     </html>
   );
