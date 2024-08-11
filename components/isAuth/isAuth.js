@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import AppLayout from "../AppLayout/AppLayout";
 import Login from "../Login/Login";
 import Loading from "../Loading/Loading";
+import { RateProvider } from "../context/RateContext";
 
 const IsAuth = ({ children }) => {
     const [isAuthenticated, setIsAuthenticated] = useState(null);
@@ -23,7 +24,7 @@ const IsAuth = ({ children }) => {
     }
   
     return (
-      <>{isAuthenticated ? <AppLayout>{children}</AppLayout> : <Login  /> }</>
+      <RateProvider>{isAuthenticated ? <AppLayout>{children}</AppLayout> : <Login  /> }</RateProvider>
     );
 }
 
