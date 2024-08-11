@@ -1,7 +1,10 @@
 import { Roboto, Rubik_Mono_One } from "next/font/google";
-import "./globals.css";
+
 import IsAuth from "@/components/isAuth/isAuth";
 import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import "./globals.css";
 
 
 const roboto = Roboto({
