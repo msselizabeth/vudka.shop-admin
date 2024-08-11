@@ -5,7 +5,6 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import styles from "./PromotionToggle.module.css";
 import RadioSelection from "./RadioSelection";
 import SelectCollection from "./SelectCollection";
