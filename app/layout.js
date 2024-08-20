@@ -1,8 +1,9 @@
 import { Roboto, Rubik_Mono_One } from "next/font/google";
 
 import IsAuth from "@/components/isAuth/isAuth";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 import "./globals.css";
 

@@ -5,10 +5,8 @@ import { useContext, useEffect, useState } from "react";
 import { RateContext } from "@/components/context/RateContext";
 
 const GoodsList = ({ goods, goodFields }) => {
-  
-  const { rate
-} = useContext(RateContext);
-  
+  const { rate } = useContext(RateContext);
+
   return (
     <ul className={styles.goodsList}>
       {goods.map(
@@ -24,6 +22,7 @@ const GoodsList = ({ goods, goodFields }) => {
           img,
           stock,
           alt,
+          sale
         }) => (
           <li key={_id} className={styles.goodItem}>
             <Image
@@ -34,17 +33,26 @@ const GoodsList = ({ goods, goodFields }) => {
               className={styles.goodImage}
             />
             <div className={styles.goodInfo}>
+              <div className={styles.goodInfoName}>
               <Link
                 href={"/"}
                 className={styles.goodLink}
-              >{`${name} ${brand} ${series} ${model}`}</Link>
-              <p className={styles.stock}>
-                {stock > 0 ? `Кількість на складі: ${stock}шт` : "немає в наявності"}
+                >{`${name} ${brand} ${series} ${model}`}</Link>
+                 <p className={styles.stock}>
+                {stock > 0
+                  ? `На складі: ${stock}шт`
+                  : "немає в наявності"}
               </p>
-              <p>{`Ціна: ${price}$ - ${(price * parseFloat(rate)).toFixed(0)}грн`}</p>
-              <p>{`Ціна зі знижкою: ${salePriceMain}$ - ${
+              <p className={styles.goodArticle}>{`Артикул: ${item}`}</p>
+             
+          </div>
+              <p>{`Ціна: ${price}$ - ${Math.ceil(
+                price * parseFloat(rate)
+              )}грн`}</p>
+              <p>{`Ціна(розвродаж): ${salePriceMain}$ - ${Math.ceil(
                 salePriceMain * parseFloat(rate)
-              }грн`}</p>
+              )}грн`}</p>
+              <p>{`Участь у розпродажі: ${sale ? "Так" : "Ні"}`}</p>
             </div>
           </li>
         )

@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import styles from "../Rates/RatesList.module.css";
+import styles from "./RatesList.module.css";
 import { faRectangleXmark, faSquareCheck } from "@fortawesome/free-solid-svg-icons";
 
 const UpdateInput = ({value, onChange, disabled, saveRate, setEditTarget}) => {

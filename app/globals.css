@@ -18,6 +18,9 @@
   --edit-icon-color: #0a8dc4;
   --save-icon-color: #12A406;
   --cancel-delete-icon-color: #CD0505;
+
+  --add-items-color: #F79401;
+
 }
 
 
@@ -66,12 +69,12 @@ a {
   margin-bottom: 15px;
 }
 
-.Toastify__toast {
+/* .Toastify__toast {
   width: 100%;
   height: 100%;
-  font-size: 20px; /* Увеличивает размер текста */
+  font-size: 20px; 
   padding: 15px; 
-  /* Увеличивает отступы */
+
 }
 
 .Toastify__toast-body {
@@ -95,5 +98,5 @@ a {
 }
 
 .Toastify__close-button {
-  font-size: 16px; /* Увеличивает размер кнопки закрытия */
-}
+  font-size: 16px; 
+} */

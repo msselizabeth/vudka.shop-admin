@@ -1,13 +1,13 @@
 "use client";
 import React, { useState, useEffect, useContext } from "react";
 import styles from "./RatesList.module.css";
-import UpdateInput from "../Exchange/UpdateInput";
-import ToChangeButton from "../Exchange/ToChangeButton";
+import UpdateInput from "./UpdateInput";
+import ToChangeButton from "./ToChangeButton";
 import InnerLoad from "../InnerLoad/InnerLoad";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileInvoiceDollar } from "@fortawesome/free-solid-svg-icons";
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 
 // Импортируем контекст
 import { RateContext } from "../context/RateContext";

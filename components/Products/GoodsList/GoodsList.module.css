@@ -15,9 +15,16 @@
     background: var(--containers-bg);
 }
 .goodInfo{
+    width: 100%;
  display: flex;
  flex-direction: column;
  justify-content: space-evenly;
+}
+.goodInfoName{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+   
 }
 .goodImage{
     width: 100px;
@@ -25,8 +32,13 @@
     border-radius: 25px;
 }
 .goodLink{
+    display: block;
     font-weight: 500;
 }
 .stock{
     color: var(--bold-text-color);
+}
+.goodArticle{
+    font-size: 15px;
+    font-weight: 300;
 }
