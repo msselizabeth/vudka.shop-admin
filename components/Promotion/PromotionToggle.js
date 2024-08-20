@@ -15,7 +15,7 @@ const PromotionToggle = () => {
   const [dateRange, setDateRange] = useState([null, null]);
   const [startDate, endDate] = dateRange;
   const [selectedCollection, setSelectedCollection] = useState("Rod");
-  const [selectedDiscount, setSelectedDicsount] = useState("3");
+  
   const [errorMessage, setErrorMessage] = useState("");
   const [isOpenBody, setIsOpenBody] = useState(false);
 
@@ -49,7 +49,6 @@ const PromotionToggle = () => {
           startDate: enablePromotion ? startDate.toISOString() : null,
           endDate: enablePromotion ? endDate.toISOString() : null,
           collection: selectedCollection,
-          discount: selectedDiscount,
         },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -83,25 +82,7 @@ const PromotionToggle = () => {
             onChange={(e) => setSelectedCollection(e.target.value)}
           />
         )}
-        {enablePromotion && (
-          <div className={styles.selectContainer}>
-            <label>Знижка:</label>
-            <select
-              value={selectedDiscount}
-              onChange={(e) => setSelectedDicsount(e.target.value)}
-              className={styles.select}
-            >
-              <option value="3">3%</option>
-              <option value="5">5%</option>
-              <option value="7">7%</option>
-              <option value="10">10%</option>
-              <option value="15">15%</option>
-              <option value="20">20%</option>
-              <option value="25">25%</option>
-              <option value="30">30%</option>
-            </select>
-          </div>
-        )}
+      
       </div>
 
       {enablePromotion && (
