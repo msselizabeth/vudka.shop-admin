@@ -22,7 +22,9 @@ const GoodsList = ({ goods, goodFields }) => {
           img,
           stock,
           alt,
-          sale
+          promotion,
+          discount,
+          sale,
         }) => (
           <li key={_id} className={styles.goodItem}>
             <Image
@@ -34,22 +36,22 @@ const GoodsList = ({ goods, goodFields }) => {
             />
             <div className={styles.goodInfo}>
               <div className={styles.goodInfoName}>
-              <Link
-                href={"/"}
-                className={styles.goodLink}
+                <Link
+                  href={"/"}
+                  className={styles.goodLink}
                 >{`${name} ${brand} ${series} ${model}`}</Link>
-                 <p className={styles.stock}>
-                {stock > 0
-                  ? `На складі: ${stock}шт`
-                  : "немає в наявності"}
-              </p>
-              <p className={styles.goodArticle}>{`Артикул: ${item}`}</p>
-             
-          </div>
+                <p className={styles.stock}>
+                  {stock > 0 ? `На складі: ${stock}шт` : "немає в наявності"}
+                </p>
+                <p className={styles.goodArticle}>{`Артикул: ${item}`}</p>
+              </div>
               <p>{`Ціна: ${price}$ - ${Math.ceil(
                 price * parseFloat(rate)
               )}грн`}</p>
-              <p>{`Ціна(розвродаж): ${salePriceMain}$ - ${Math.ceil(
+              {`Знижку активовано - ${promotion ? "так" : "ні"}`}
+              {promotion &&
+                `Ціна(акційна): ${price}$ - ${Math.ceil(price * discount * parseFloat(rate))}грн`}
+              <p>{`Ціна(розпродаж): ${salePriceMain}$ - ${Math.ceil(
                 salePriceMain * parseFloat(rate)
               )}грн`}</p>
               <p>{`Участь у розпродажі: ${sale ? "Так" : "Ні"}`}</p>
