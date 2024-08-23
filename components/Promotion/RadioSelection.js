@@ -14,7 +14,7 @@ const RadioSelection = ({ enablePromotion, onChange }) => {
         Активувати знижку
       </label>
 
-      <label className={styles.radioLabel}>
+      {/* <label className={styles.radioLabel}>
         <input
           type="radio"
           name="promotion"
@@ -23,7 +23,7 @@ const RadioSelection = ({ enablePromotion, onChange }) => {
           onChange={onChange}
         />
         Вимкнути знижку
-      </label>
+      </label> */}
     </div>
   );
 };
