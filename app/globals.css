@@ -14,6 +14,7 @@
   --transition: all 0.3s ease-out;
   --pagination-btns-color: rgb(135,42,3);
   --pagination-btns-disabled-color: rgba(135,42,3, 0.4);
+  --table-border-color: #1366733d;
   
   --edit-icon-color: #0a8dc4;
   --save-icon-color: #12A406;
