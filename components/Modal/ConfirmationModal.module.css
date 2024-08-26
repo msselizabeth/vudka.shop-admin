@@ -1,0 +1,64 @@
+/* Стили для модального окна */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modalContent {
+    background: var(--primary-bg-color);
+    padding: 30px 40px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+  }
+  .modalContent p {
+    margin-top: 20px;
+  }
+  .modalContent span {
+    font-weight: 500;
+    color: var(--bold-text-color);
+  }
+  
+  .modalButtons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+  }
+  
+  .confirmButton {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .cancelButton {
+    background-color: #157dcd;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .confirmButton:hover {
+    background-color: #d21427;
+  }
+  
+  .cancelButton:hover {
+    background-color: #0b8cee;
+  }
+  
