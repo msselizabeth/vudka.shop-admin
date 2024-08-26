@@ -1,0 +1,6 @@
+.deleteButton {
+    color: var(--cancel-delete-icon-color);
+}
+.editButton {
+    color: var(--edit-icon-color);
+}
