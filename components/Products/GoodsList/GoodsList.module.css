@@ -42,3 +42,29 @@
     font-size: 15px;
     font-weight: 300;
 }
+.buttonsContainer{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.priceTable {
+    width: calc(100% - 180px);
+    margin-top: 15px;
+    border-collapse: collapse;
+    background-color: var(--primary-bg-color);
+    
+  }
+
+  .priceTable th, .priceTable td {
+    border: 1px solid var(--table-border-color);
+    padding: 8px;
+    width: 50%;
+  
+    text-align: left;
+  }
+
+  .priceTable th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+
