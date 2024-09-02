@@ -7,7 +7,7 @@ import axios from "axios";
 import Pagination from "@/components/Pagination/Pagination";
 import GoodsList from "./GoodsList";
 
-const Goods = ({ goodFields, apiEndpoint }) => {
+const Goods = ({ goodFields, apiEndpoint, collection }) => {
   const [goods, setGoods] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [page, setPage] = useState(1);
@@ -58,6 +58,8 @@ const Goods = ({ goodFields, apiEndpoint }) => {
   const startItemIndex = (page - 1) * limit + 1;
   const endItemIndex = Math.min(page * limit, totalGoods);
 
+  
+
   return (
     <>
       <div className={styles.goodsContainer}>
@@ -74,7 +76,7 @@ const Goods = ({ goodFields, apiEndpoint }) => {
             <p className={styles.goodsQuantity}>
               Товари: {startItemIndex}-{endItemIndex} з {totalGoods} товарів
             </p>
-            <GoodsList goods={goods} goodFields={goodFields} />
+            <GoodsList goods={goods} collectionName={collection} />
             <Pagination
               onClick={handlePageChange}
               page={page}

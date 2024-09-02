@@ -8,6 +8,6 @@ export default function Rods() {
   return <>
     <h1 className="pages-title">Вудилища</h1>
     {/* <RodsList /> */}
-    <Goods apiEndpoint={"admin-rods"} goodFields={['name', 'brand', 'series', 'model', 'item']} />
+    <Goods apiEndpoint={"admin-rods"} goodFields={['name', 'brand', 'series', 'model', 'item']} collection={"rods"} />
   </>
 }

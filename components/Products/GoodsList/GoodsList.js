@@ -9,25 +9,43 @@ import NoComponent from "@/components/Highlights/NoComponent";
 import EditButton from "@/components/Buttons/EditButton";
 import DeleteButton from "@/components/Buttons/DeleteButton";
 import ConfirmationModal from "@/components/Modal/ConfirmationModal";
+import axios from "axios";
+import { toast } from "react-toastify";
 
-const GoodsList = ({ goods, goodFields }) => {
+const GoodsList = ({ goods, collectionName }) => {
   const { rate } = useContext(RateContext);
-
   const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
-
   const [currentItem, setCurrentItem] = useState(null);
+  const [updatedGoods, setUpdatedGoods] = useState([...goods]);
 
   const handleDeleteClick = (item) => {
     setCurrentItem(item);
     setIsConfirmModalOpen(true);
   };
 
-  const handleConfirmDelete = () => {
-    // if (currentItem && onDelete) {
-    //   onDelete(currentItem._id); // Передаем ID элемента для удаления
-    // }
-    setIsConfirmModalOpen(false);
-    setCurrentItem(null);
+  const handleConfirmDelete = async () => {
+    try {
+      const response = await axios.delete(
+        `${process.env.NEXT_PUBLIC_API_URL}/producs/${collectionName}/${currentItem._id}`
+      );
+
+      if (response.status === 200) {
+        toast.success(`Товар -> ${currentItem.name} ${currentItem.brand} ${currentItem.series} ${currentItem.model} <- успішно видалено з бази даних.`)
+
+        // Обновляем список товаров, убирая удаленный элемент
+        setUpdatedGoods((prevGoods) =>
+          prevGoods.filter((item) => item._id !== currentItem._id)
+        );
+      } else {
+        toast.error("Виникла помилка при видаленні товара. Повторіть спробу.")
+      }
+    } catch (error) {
+      toast.error("Виникла помилка при видаленні товара. Повторіть спробу.");
+      console.error("Помилка:", error);
+    } finally {
+      setIsConfirmModalOpen(false);
+      setCurrentItem(null);
+    }
   };
 
   const handleCancelDelete = () => {
@@ -37,7 +55,7 @@ const GoodsList = ({ goods, goodFields }) => {
 
   return (
     <ul className={styles.goodsList}>
-      {goods.map(
+      {updatedGoods.map(
         ({
           name,
           brand,
@@ -69,25 +87,26 @@ const GoodsList = ({ goods, goodFields }) => {
                   className={styles.goodLink}
                 >{`${name} ${brand} ${series} ${model}`}</Link>
               <div className={styles.buttonsContainer}>
-        <EditButton onClick={"onEdit"} />
-                  <DeleteButton onClick={() =>
-                        handleDeleteClick({
-                          _id,
-                          name,
-                          brand,
-                          series,
-                          model,
-                        })
-                      } />
-                  {isConfirmModalOpen && (
-                    <ConfirmationModal
-                      element={`${currentItem.name} ${currentItem.brand} ${currentItem.series} ${currentItem.model}`}
-          onConfirm={handleConfirmDelete}
-          onCancel={handleCancelDelete}
-        />
-      )}
-      </div>
-               
+                <EditButton onClick={"onEdit"} />
+                <DeleteButton
+                  onClick={() =>
+                    handleDeleteClick({
+                      _id,
+                      name,
+                      brand,
+                      series,
+                      model,
+                    })
+                  }
+                />
+                {isConfirmModalOpen && (
+                  <ConfirmationModal
+                    element={`${currentItem.name} ${currentItem.brand} ${currentItem.series} ${currentItem.model}`}
+                    onConfirm={handleConfirmDelete}
+                    onCancel={handleCancelDelete}
+                  />
+                )}
+              </div>
               </div>
               <table className={styles.priceTable}>
                 <tr>
@@ -99,8 +118,8 @@ const GoodsList = ({ goods, goodFields }) => {
                   <td>{item}</td>
                 </tr>
                 <tr>
-                <td>На складі</td>
-                <td>{stock > 0 ? `${stock} шт` : "немає в наявності"}</td>
+                  <td>На складі</td>
+                  <td>{stock > 0 ? `${stock} шт` : "немає в наявності"}</td>
                 </tr>
                 <tr>
                   <td>Ціна</td>
@@ -113,9 +132,7 @@ const GoodsList = ({ goods, goodFields }) => {
                 </tr>
                 <tr>
                   <td>Знижку активовано</td>
-                  <td>
-                    {promotion ? <YesComponent/> : <NoComponent/>}
-                  </td>
+                  <td>{promotion ? <YesComponent/> : <NoComponent/>}</td>
                 </tr>
                 {promotion && (
                   <tr>
@@ -130,9 +147,7 @@ const GoodsList = ({ goods, goodFields }) => {
                 )}
                 <tr>
                   <td>Участь у розпродажі</td>
-                  <td >
-                    {sale ? <YesComponent/> : <NoComponent/>}
-                  </td>
+                  <td>{sale ? <YesComponent/> : <NoComponent/>}</td>
                 </tr>
                 <tr>
                   <td>Ціна (розпродаж)</td>
