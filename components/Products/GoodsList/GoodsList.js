@@ -26,7 +26,7 @@ const GoodsList = ({ goods, collectionName }) => {
   const handleConfirmDelete = async () => {
     try {
       const response = await axios.delete(
-        `${process.env.NEXT_PUBLIC_API_URL}/producs/${collectionName}/${currentItem._id}`
+        `${process.env.NEXT_PUBLIC_API_URL}/products/${collectionName}/${currentItem._id}`
       );
 
       if (response.status === 200) {
