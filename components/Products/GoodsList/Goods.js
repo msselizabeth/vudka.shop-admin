@@ -30,14 +30,16 @@ const Goods = ({ goodFields, apiEndpoint, collection }) => {
         }
       );
 
+      if (response) setIsLoading(false);
       setGoods(response.data.data);
       setTotalPages(response.data.totalPages);
       setTotalGoods(response.data.totalRods);
     } catch (error) {
-      console.error("Error fetching rods:", error);
-    } finally {
-      setIsLoading(false);
+      console.error("Error fetching products:", error);
     }
+    // finally {
+    //   setIsLoading(false);
+    // }
   };
 
   useEffect(() => {
@@ -55,11 +57,16 @@ const Goods = ({ goodFields, apiEndpoint, collection }) => {
     }
   };
 
-  const startItemIndex = (page - 1) * limit + 1;
-  const endItemIndex = Math.min(page * limit, totalGoods);
+
+  let startItemIndex = 0;
+  let endItemIndex = 0; 
+  if (goods.length > 0) {
+    startItemIndex = (page - 1) * limit + 1;
+    endItemIndex = Math.min(page * limit, totalGoods);
+  }
+
 
   
-
   return (
     <>
       <div className={styles.goodsContainer}>
@@ -76,12 +83,14 @@ const Goods = ({ goodFields, apiEndpoint, collection }) => {
             <p className={styles.goodsQuantity}>
               Товари: {startItemIndex}-{endItemIndex} з {totalGoods} товарів
             </p>
-            <GoodsList goods={goods} collectionName={collection} />
-            <Pagination
-              onClick={handlePageChange}
-              page={page}
-              totalPages={totalPages}
-            />
+              {goods.length > 0 ? (<GoodsList goods={goods} collectionName={collection} />) : (<h3>Товарів не знайдено.</h3>)}
+              {
+                goods.length > 0 && <Pagination
+                onClick={handlePageChange}
+                page={page}
+                totalPages={totalPages}
+              />
+            }
           </div>
         )}
       </div>
