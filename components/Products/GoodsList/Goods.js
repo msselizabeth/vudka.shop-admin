@@ -7,7 +7,7 @@ import axios from "axios";
 import Pagination from "@/components/Pagination/Pagination";
 import GoodsList from "./GoodsList";
 
-const Goods = ({ goodFields, apiEndpoint, collection }) => {
+const Goods = ({ collection }) => {
   const [goods, setGoods] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [page, setPage] = useState(1);
@@ -20,7 +20,7 @@ const Goods = ({ goodFields, apiEndpoint, collection }) => {
     setIsLoading(true);
     try {
       const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_API_URL}/${apiEndpoint}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/products/${collection}`,
         {
           params: {
             page,
@@ -31,9 +31,9 @@ const Goods = ({ goodFields, apiEndpoint, collection }) => {
       );
 
       if (response) setIsLoading(false);
-      setGoods(response.data.data);
+      setGoods(response.data.products);
       setTotalPages(response.data.totalPages);
-      setTotalGoods(response.data.totalRods);
+      setTotalGoods(response.data.totalProducts);
     } catch (error) {
       console.error("Error fetching products:", error);
     }
@@ -44,7 +44,7 @@ const Goods = ({ goodFields, apiEndpoint, collection }) => {
 
   useEffect(() => {
     fetchGoods();
-  }, [page, limit, searchTerm, apiEndpoint]);
+  }, [page, limit, searchTerm]);
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
@@ -65,7 +65,7 @@ const Goods = ({ goodFields, apiEndpoint, collection }) => {
     endItemIndex = Math.min(page * limit, totalGoods);
   }
 
-
+  console.log(totalGoods);
   
   return (
     <>
@@ -85,7 +85,7 @@ const Goods = ({ goodFields, apiEndpoint, collection }) => {
             </p>
               {goods.length > 0 ? (<GoodsList goods={goods} collectionName={collection} />) : (<h3>Товарів не знайдено.</h3>)}
               {
-                goods.length > 0 && <Pagination
+                totalGoods > 0 && <Pagination
                 onClick={handlePageChange}
                 page={page}
                 totalPages={totalPages}

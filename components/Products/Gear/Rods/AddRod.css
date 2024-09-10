@@ -1,0 +1,151 @@
+/* Общие стили для формы */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 80%;
+ 
+  margin: 0 auto; /* Центрирование формы */
+}
+.formTitle{
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 25px;
+  color: var(--bold-text-color);
+  font-size: 20px;
+}
+
+.fieldContainer{
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 600;
+  width: 25%;
+  text-align: right;
+}
+
+.input[type="text"],
+.input[type="number"],
+.select {
+  width: 75%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+.descriptionContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 85%;
+}
+.textareaContainer{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+} 
+.textarea {
+  width: 98%;
+  height: 100px; 
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+
+input[type="file"] {
+  padding: 5px;
+  font-size: 16px;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: var(--primary-bg-color);
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.submitButton{
+  width: 200px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--save-icon-color);
+  color: var(--primary-bg-color);
+  font-weight: 500;
+  font-size: 20px;
+  margin: 0 auto;
+}
+
+/* Стили для чекбоксов */
+.checkbox {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+
+/* Стили для предварительного просмотра изображений */
+.image-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.image-preview img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.image-container {
+  margin-bottom: 20px;
+}
+
+
+/* Стили для модального окна */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+  width: 75%;
+  
+  height: 80%;
+  overflow-y: auto;
+}
+
+/* Предварительный просмотр изображений */
+.image-preview img {
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}

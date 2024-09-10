@@ -18,9 +18,12 @@
   
   --edit-icon-color: #0a8dc4;
   --save-icon-color: #12A406;
+  --save-icon-color-hover: #13a406b5;
   --cancel-delete-icon-color: #CD0505;
+  --cancel-delete-icon-color-hover: #cd0505c9;
 
   --add-items-color: #F79401;
+  --add-items-color-hover: #f79501ba;
 
 }
 
@@ -68,6 +71,13 @@ a {
   padding: 10px;
   margin-top: 15px;
   margin-bottom: 15px;
+}
+
+.pages-title-container{
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* .Toastify__toast {

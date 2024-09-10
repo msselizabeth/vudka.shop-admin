@@ -1,6 +1,104 @@
 .deleteButton {
     color: var(--cancel-delete-icon-color);
+    transition: var(--transition);
 }
 .editButton {
     color: var(--edit-icon-color);
+    transition: var(--transition);
+}
+.submitButton{
+    width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--save-icon-color);
+    color: var(--primary-bg-color);
+    font-weight: 500;
+    font-size: 20px;
+    margin: 0 auto;
+    transition: var(--transition);
+    cursor: pointer;
+}
+.submitButton:hover {
+    background-color: var(--save-icon-color-hover);
+}
+
+.addProductButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    gap: 10px;
+    padding: 10px;
+    background-color: #F79401;
+    border-radius: 10px;
+    color: var(--primary-bg-color);
+    font-size: 18px;
+    transition: var(--transition);
+    
+}
+.addProductButtonIcon{
+    font-size: 25px;
+}
+
+.confirmButton{
+    width: 180px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--save-icon-color);
+    color: var(--primary-bg-color);
+    font-weight: 500;
+    font-size: 20px;
+    transition: var(--transition);
+    cursor: pointer;
+}
+.confirmButton:hover {
+    background-color: var(--save-icon-color-hover);
+}
+
+.backButton{
+    width: 140px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--cancel-delete-icon-color);
+    color: var(--primary-bg-color);
+    font-weight: 500;
+    font-size: 20px;
+    transition: var(--transition);
+    cursor: pointer;
+}
+.backButton:hover {
+    background-color: var(--cancel-delete-icon-color-hover);
+}
+
+.addParagraph{
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: var(--add-items-color);
+    border-radius: 10px;
+    color: var(--primary-bg-color);
+    font-size: 16px;
+    transition: var(--transition);
+    cursor: pointer;
+}
+.addParagraph:hover{
+    background-color: var(--add-items-color-hover);
+}
+.addParagraphIcon{
+    font-size: 22px;
+}
+
+.closeButton {
+    float: right;
+    color: var(--cancel-delete-icon-color);
+    transition: var(--transition);
+}
+.closeButton:hover{
+    color: var(--cancel-delete-icon-color-hover);
+}
+.closeButtonIcon{
+    font-size: 25px;
 }

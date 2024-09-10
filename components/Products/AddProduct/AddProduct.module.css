@@ -1,0 +1,158 @@
+/* Общие стили для формы */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+   
+    margin: 0 auto; /* Центрирование формы */
+  }
+  .formTitle{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 25px;
+    color: var(--bold-text-color);
+    font-size: 20px;
+  }
+  
+  .fieldContainer{
+    display: flex;
+    align-items: center;
+  
+    gap: 10px;
+  }
+  
+  .label {
+    font-size: 16px;
+    font-weight: 600;
+    width: 25%;
+    text-align: right;
+  }
+  
+  .input[type="text"],
+  .input[type="number"],
+  .select {
+    width: 75%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  .descriptionContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 75%;
+  }
+  .textareaContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  } 
+  .textarea {
+    width: 100%;
+    height: 100px; 
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+
+  .customButton{
+    background-color: var(--add-items-color);
+    color: var(--primary-bg-color);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: var(--transition)
+  }
+  .customButton:hover {
+    background-color: var(--add-items-color-hover);
+  }
+  
+  /* Стили для чекбоксов */
+  .checkbox {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+  }
+
+  /* Стили для модального окна */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modalContent {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    width: 90%;
+    
+    height: 100%;
+    overflow-y: auto;
+  }
+  
+  /* Предварительный просмотр изображений */
+  .imagePreview img {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .previewBtnsContainer{
+  margin-top: 25px;
+    display: flex;
+    justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+  .dataPreview{
+    width: 60%;
+ 
+     margin: 0 auto;
+  }
+
+  .dataPreviewTable {
+    width: 100%;
+    border-collapse: separate;
+  }
+  
+  .dataPreviewTable th, .dataPreviewTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .dataPreviewTable th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    width: 250px;
+  }
+  
+  
+  
+  .dataPreviewTable tr:hover {
+    background-color: #f1f1f1;
+  }
+
+  .descriptionText{
+    margin-bottom: 10px;
+  }
+  .descriptionText:last-child{
+    margin-bottom: 0px;
+  }
