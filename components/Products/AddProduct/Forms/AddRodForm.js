@@ -40,7 +40,7 @@ const AddRodForm = ({
         />
 
         <SelectInput
-          label="Категорія вудилища:"
+          label="*Категорія вудилища:"
           name="purpose"
           value={rodData.purpose}
           onChange={handleChange}
@@ -52,7 +52,7 @@ const AddRodForm = ({
           value={rodData.price}
           onChange={handleChange}
           placeholder={"111.09 або 110"}
-          label={"Ціна(звичайна):"}
+          label={"*Ціна(звичайна):"}
         />
 
         <NumberInput
@@ -60,11 +60,11 @@ const AddRodForm = ({
           onChange={handleChange}
           name={"stock"}
           value={rodData.stock}
-          label={"Кількість на складі:"}
+          label={"*Кількість на складі:"}
         />
 
         <SelectInput
-          label="Група знижки"
+          label="*Група знижки"
           name="discount"
           value={rodData.discount}
           onChange={handleChange}
@@ -96,7 +96,7 @@ const AddRodForm = ({
         />
 
         <SelectInput
-          label="Тип вудилища:"
+          label="*Тип вудилища:"
           name="typerods"
           value={rodData.typerods}
           onChange={handleChange}
@@ -116,7 +116,7 @@ const AddRodForm = ({
           value={rodData.name}
           onChange={handleChange}
           placeholder={"Фідерне вудилище або коропове вудилище"}
-          label={"Назва(тип вудилища):"}
+          label={"*Назва(тип вудилища):"}
         />
 
         <TextInput
@@ -124,7 +124,7 @@ const AddRodForm = ({
           value={rodData.brand}
           onChange={handleChange}
           placeholder={"Shimano або Daiwa"}
-          label={"Бренд:"}
+          label={"*Бренд:"}
         />
 
         <TextInput
@@ -132,7 +132,7 @@ const AddRodForm = ({
           value={rodData.series}
           onChange={handleChange}
           placeholder={"Catana"}
-          label={"Серія:"}
+          label={"*Серія:"}
         />
 
         <TextInput
@@ -140,7 +140,7 @@ const AddRodForm = ({
           value={rodData.model}
           onChange={handleChange}
           placeholder={"62UL, 72MH"}
-          label={"Модель:"}
+          label={"*Модель:"}
         />
 
         <TextInput
@@ -148,7 +148,7 @@ const AddRodForm = ({
           value={rodData.item}
           onChange={handleChange}
           placeholder={"SED61ULFE"}
-          label={"Артикль:"}
+          label={"*Артикль:"}
         />
 
         <TextInput
@@ -248,7 +248,7 @@ const AddRodForm = ({
         />
 
         <ImagesInput
-          label={"Зображення(додайте одразу всі в порядку відображення):"}
+          label={"*Зображення(додайте одразу всі в порядку відображення):"}
           name="images"
           onChange={handleImageChange}
           imagePreviews={imagePreviews}
@@ -259,7 +259,7 @@ const AddRodForm = ({
           value={rodData.alt}
           onChange={handleChange}
           placeholder={"купити вудилище ... в магазині..."}
-          label={"Альтернативний текст фото:"}
+          label={"*Альтернативний текст фото:"}
         />
 
         <SubmitFormButton />

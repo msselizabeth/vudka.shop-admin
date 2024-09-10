@@ -5,6 +5,7 @@ import AddProductButton from "@/components/Buttons/AddProductButton";
 import AddProductModal from "../../AddProduct/AddProductModal";
 import AddRodForm from "../../AddProduct/Forms/AddRodForm";
 import AddRodPreview from "../../AddProduct/Preview/AddRodPreview";
+import { toast } from "react-toastify";
 
 const AddRod = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -93,7 +94,7 @@ const AddRod = () => {
     const formData = new FormData();
 
     images.forEach((image, index) => {
-      formData.append(`images`, image); // `images` - это массив изображений на бэкенде
+      formData.append(`images`, image); 
     });
 
     // Добавляем обычные поля
@@ -113,7 +114,7 @@ const AddRod = () => {
         `${process.env.NEXT_PUBLIC_API_URL}/admin-rods`,
         formData
       );
-      console.log("Product added successfully", response.data);
+      toast.success("Товар додано в базу даних успішно.");
       // Очистка формы после успешной отправки
       setRodData({
         render: false,
@@ -147,11 +148,13 @@ const AddRod = () => {
         alt: "",
       });
       setImages([]);
-
-      // Закрываем модальное окно после успешного добавления
       setIsPreviewModalOpen(false);
       setIsModalOpen(false);
     } catch (error) {
+      if (error.response.status === 400) { toast.error("Помилка валідації форми, перевірте всі поля.") }
+      else {
+        toast.error("Невідома помилка. Повторіть спробу.")
+      }
       console.error("Error adding product", error);
     }
   };
